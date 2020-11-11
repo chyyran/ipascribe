@@ -43,7 +43,7 @@ async fn main() {
     let routes = hello
         .or(words)
         .or(word);
-    warp::serve(routes).run(([127, 0, 0, 1], 3030)).await;
+    warp::serve(routes).run(([0, 0, 0, 0], 80)).await;
 }
 #[derive(Debug)]
 pub struct ServiceError(serde_json::Error);
