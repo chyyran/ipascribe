@@ -3,6 +3,7 @@ from collections import defaultdict
 from typing import *
 import re 
 import json
+import pickle
 from tqdm import tqdm
 
 convertor = arpa.ARPAbet2PhoneticAlphabetConvertor()
@@ -31,3 +32,5 @@ if __name__ == "__main__":
     parsed = parse_file("cmudict-0.7b")
     with open("cmudict.json", "w", encoding='utf8') as f:
         json.dump(parsed, f, ensure_ascii=False)
+    with open("cmudict.pickle", "wb") as f:
+        pickle.dump(dict(parsed), f)
