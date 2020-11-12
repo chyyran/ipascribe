@@ -1,12 +1,15 @@
 mod cmudict;
 use serde_json::to_string;
-use warp::Filter;
 use rand::seq::SliceRandom; 
+use warp::{http::Method, Filter};
 
 #[tokio::main]
 async fn main() {
-    // GET /hello/warp => 200 OK with body "Hello, warp!"
-    let hello = warp::path!("hello" / String).map(|name| format!("Hello, {}!", name));
+    
+    let cors = warp::cors()
+        .allow_any_origin()
+        .allow_headers(vec!["User-Agent", "Sec-Fetch-Mode", "Referer", "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Content-Type", "*"])
+        .allow_methods(&[Method::GET]);
 
     // GET /words/word=> 200 OK with body [ipas]
     let words = warp::path!("words" / String)
@@ -21,7 +24,7 @@ async fn main() {
             } else {
                 Err(warp::reject::not_found())
             }
-        });
+        }).with(&cors);
     
 
     // GET /word => 200 OK with body [ipas]
@@ -37,18 +40,13 @@ async fn main() {
         }
         let json = to_string(&res).unwrap();
         format!("{}", json)
-    });
+    }).with(&cors);
 
 
-    let cors = warp::cors()
-        .allow_any_origin()
-        .allow_methods(vec!["GET"]);
-
-    let routes = hello
-        .or(words)
+    let routes = words
         .or(word)
         .with(&cors);
-        
+
     warp::serve(routes)
         .run(([0, 0, 0, 0], 80)).await;
 }
