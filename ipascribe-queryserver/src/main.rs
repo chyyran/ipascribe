@@ -40,10 +40,17 @@ async fn main() {
     });
 
 
+    let cors = warp::cors()
+        .allow_any_origin()
+        .allow_methods(vec!["GET"]);
+
     let routes = hello
         .or(words)
-        .or(word);
-    warp::serve(routes).run(([0, 0, 0, 0], 80)).await;
+        .or(word)
+        .with(&cors);
+        
+    warp::serve(routes)
+        .run(([0, 0, 0, 0], 80)).await;
 }
 #[derive(Debug)]
 pub struct ServiceError(serde_json::Error);

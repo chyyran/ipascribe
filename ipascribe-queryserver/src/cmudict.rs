@@ -4,8 +4,6 @@ use lazy_static_include::{
     lazy_static_include_str, lazy_static_include_str_impl, lazy_static_include_str_inner,
 };
 
-
-use serde;
 use serde_json;
 use std::collections::HashMap;
 
