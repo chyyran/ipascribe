@@ -20,7 +20,7 @@ const useWordFetch = (): [WordPair, () => Promise<void>] => {
             })
         }
 
-        console.log("Fetched new word: ", word[0])
+        console.log("Fetched new word: ", word[0], word[1])
 
     }, [get, response])
 
