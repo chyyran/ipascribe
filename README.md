@@ -1,6 +1,20 @@
+---
+title: "IPAScribe"
+date: November 12, 2020
+author: Ronny Chan
+geometry: margin=2cm
+output: pdf_document
+mainfont: "Noto Serif CJK JP"
+monofont: "Fira Code"
+---
+
 # IPAScribe
 IPA transcribing practice game. 
+
 https://ipascribe.chyyran.dev/
+
+
+https://github.com/chyyran/ipascribe
 
 ## About
 IPAScribe is a web-based game to help practice IPA transcription from (currently) North American English. 
@@ -61,7 +75,7 @@ Science Foundation of the United States of America, and by member
 companies of the Carnegie Mellon Sphinx Speech Consortium. We acknowledge
 the contributions of many volunteers to the expansion and improvement of
 this dictionary.
-THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY ``AS IS'' AND
+THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY "AS IS" AND
 ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
 THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
 PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY
