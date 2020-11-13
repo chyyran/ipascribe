@@ -8,7 +8,7 @@ interface WordPair {
 
 const useWordFetch = (): [WordPair, () => Promise<void>] => {
     const [wordPair, setWord] = useState<WordPair>({ orthographic: "", ipa: "" });
-    const { get, post, response, loading, error } = useFetch("https://ipascribe.ronnychan.ca", 
+    const { get, response } = useFetch("https://ipascribe.ronnychan.ca", 
         { cachePolicy: CachePolicies.NO_CACHE })
     const fetchNewWord = useCallback(async () => {
         const word = await get("/word")

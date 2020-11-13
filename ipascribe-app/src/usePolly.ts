@@ -4,7 +4,7 @@ import useFetch from 'use-http'
 
 const usePolly = (): [string, (ipa: string) => Promise<void>] => {
     const [audio, setAudio] = useState<string>("");
-    const { get, post, response, loading, error } = useFetch("https://sc7lajimwg.execute-api.us-east-1.amazonaws.com")
+    const { post, response } = useFetch("https://sc7lajimwg.execute-api.us-east-1.amazonaws.com")
     const fetchNewAudio = useCallback(async (ipa: string) => {
         const audio = await post("/PollyInitStage", {
             text: ipa
@@ -14,7 +14,7 @@ const usePolly = (): [string, (ipa: string) => Promise<void>] => {
             setAudio(audio)
         }
 
-    }, [get, response])
+    }, [post, response])
 
     return [audio, fetchNewAudio]
 }

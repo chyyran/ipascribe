@@ -304,7 +304,7 @@ class IpaInput extends Component<IpaInputProps, IpaInputState> {
                     onMouseOver={this.onListMouseOver.bind(this)}
                     onMouseOut={this.onListMouseOut.bind(this)}>
                     {this.state.suggestions.map((suggestion, index) => {
-                        const { glyph, name, diacritic } = suggestion;
+                        const { glyph, name } = suggestion;
 
                         return (
                             <li key={'IpaSuggestion' + index}
