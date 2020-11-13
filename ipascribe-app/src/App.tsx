@@ -22,8 +22,8 @@ function App() {
     let cmp = wordPair.ipa // proper IPA colons
     answer = answer.replaceAll(':', 'ː')
     if (ignoreStress) {
-      answer = answer.replaceAll('ˈ', '').replaceAll(':', '').replaceAll('ˌ', '').replaceAll(':', 'ː').trim()
-      cmp = cmp.replaceAll('ˈ', '').replaceAll(':', '').replaceAll('ˌ', '').replaceAll(':', 'ː').trim()
+      answer = answer.replaceAll('ˈ', '').replaceAll(':', '').replaceAll('ˌ', '').replaceAll('ː', '').trim()
+      cmp = cmp.replaceAll('ˈ', '').replaceAll(':', '').replaceAll('ˌ', '').replaceAll('ː', '').trim()
     }
     if (answer === cmp) {
       console.log(answer, "is correct")
