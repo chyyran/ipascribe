@@ -24,9 +24,19 @@ IPAScribe is a web-based game to help practice IPA transcription from (currently
 
 Because it is freely available and easy to use, IPAScribe uses Carnegie Mellon University's (2014) [CMUDict][1], a ARPAbet annotated corpus of English words, as its primary (and so far only) corpus. Each ARPAbet entry was then converted to IPA with the [ARPAbetAndIPAConvertor][3] Python library by zhangqi (2018).
 
-## Hosting and Usage
-A hosted instance of IPAScribe is available at https://ipascribe.chyyran.dev/.
+## Usage
+A hosted instance of IPAScribe is available at https://ipascribe.chyyran.dev/. 
+You are given an English word to transcribe into IPA. As you type into the text box, a pop-up menu will appear to assist in typing IPA symbols, simply press the number of the symbol you wish you input when it shows up. Note that `ʌ` will be suggested with `v` and not `^`. 
 
+You have an unlimited amount of time to keep trying. Once you input the correct answer, the background will change from red to green, and gain a point. Your score is the number of words you have successfully transcribed.
+
+The green '**Play**' button can be pressed to hear the word being pronounced. Unfortunately this is synthesized and may not be very natural sounding, but the input to the speech synthesizer is not the orthographic representation of the word, but the correct IPA transcription including stress and vowel length markers, so the hope is that it will be accurate for transcription purposes.
+
+If you are stuck, press the blue **Show Answer** button, and you will be able to skip to the next word without gaining a point.
+
+By default, "Ignore Stress and Length" and "Limit IPA Suggestions to English" are checked. Unchecking "Ignore Stress and Length" will raise the difficulty by requiring not only the letters, but also the various stresses and vowel lengths to match with the correct transcription. Unchecking "Limit IPA Suggestions to English" will make the pop-up IPA suggestion box suggest segments that are not present in English, so it is recommended that this remain checked.
+
+## Hosting
 
 IPAScribe consists of three parts: the corpus query server, the web application, and the pronunciation Lambda.
 
