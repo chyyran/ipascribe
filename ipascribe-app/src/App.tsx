@@ -10,7 +10,7 @@ import { Button, Checkbox, FormControlLabel } from '@material-ui/core'
 
 function App() {
   const [wordPair, fetchNewWord] = useWordFetch()
-  const [audio, fetchNewAudio] = usePolly()
+  const [audio, loading, fetchNewAudio] = usePolly()
   const [score, setScore] = useState(0)
   const [ignoreStress, setIgnoreStress] = useState(true)
   const [limitToEnglish, setLimitToEnglish] = useState(true)
@@ -50,7 +50,7 @@ function App() {
         </div>
 
         <div style={{ display: "flex" }} className="buttons">
-          <AudioPlayer src={"data:audio/mpeg;base64," + audio} />
+          <AudioPlayer loading={loading} src={"data:audio/mpeg;base64," + audio} />
           {
             answerShown || !answerIsWrong ?
               <SkipButton
