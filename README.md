@@ -6,6 +6,9 @@ geometry: margin=2cm
 output: pdf_document
 mainfont: "Noto Serif CJK JP"
 monofont: "Fira Code"
+header-includes:
+    - \usepackage{setspace}
+    - \setstretch{1.15}
 ---
 
 # IPAScribe
