@@ -1,8 +1,16 @@
+
 .IpaInput__input {
   box-sizing: border-box;
   border: 1px solid #666;
   padding: 0.25em;
+  width: 95%;
+  width: calc(100% - 20px);  
+  width: -webkit-fill-available;
+  margin: 10px;
+  height: 50px;
+  font-size: 2em;
 }
+
 .IpaInput__list {
   box-sizing: border-box;
   margin: 0;
@@ -43,4 +51,63 @@
 
 .hints {
   padding: 1em 0 0;
+}
+
+.audio-button {
+  background-color: #2e7d32 !important;
+  color: white !important;
+}
+
+.container {
+  height: 100vh;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+.buttons {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons > button {
+  margin: 10px
+}
+
+.App {
+  margin-top: 10%;
+  color: #232323;
+}
+.question {
+  height: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2.5em;
+}
+
+.question .word {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.75em;
+}
+.ipa, .IpaInput {
+  font-family: 'Noto Sans', sans-serif;
+}
+.ipa-hidden {
+  opacity: 0;
+}
+
+.score {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.controls {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5em;
+}
+
+.controls label {
+  padding: 10px 0;
 }

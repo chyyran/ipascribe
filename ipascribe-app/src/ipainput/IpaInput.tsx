@@ -229,7 +229,7 @@ class IpaInput extends Component<IpaInputProps, IpaInputState> {
         this.props.onChange?.(newValue)
     }
 
-    componentWillReceiveProps(newProps: IpaInputProps) {
+    UNSAFE_componentWillReceiveProps(newProps: IpaInputProps) {
         const newState: IpaInputState = {
             ...this.state
         };
@@ -266,7 +266,6 @@ class IpaInput extends Component<IpaInputProps, IpaInputState> {
             },
             input: {
                 position: "relative",
-                width: '100%',
                 zIndex: 2
             },
             list: {

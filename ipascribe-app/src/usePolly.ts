@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import useFetch, { Provider } from 'use-http'
+import { useState, useCallback} from 'react';
+import useFetch from 'use-http'
 
 
 const usePolly = (): [string, (ipa: string) => Promise<void>] => {

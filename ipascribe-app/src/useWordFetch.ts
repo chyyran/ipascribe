@@ -1,5 +1,5 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import useFetch, { CachePolicies, Provider } from 'use-http'
+import { useState, useCallback, useEffect } from 'react';
+import useFetch, { CachePolicies } from 'use-http'
 
 interface WordPair {
     orthographic: string,
@@ -16,7 +16,7 @@ const useWordFetch = (): [WordPair, () => Promise<void>] => {
         if (response.ok) {
             setWord({
                 orthographic: word[0],
-                ipa: word[1]
+                ipa: word[1].replaceAll(':', 'ː')
             })
         }
 
