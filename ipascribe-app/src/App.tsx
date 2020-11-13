@@ -45,7 +45,7 @@ function App() {
             {wordPair.orthographic}
           </div>
           <div className={answerShown || !answerIsWrong ? "ipa" : "ipa-hidden"}>
-              {wordPair.ipa}
+              [{wordPair.ipa}]
           </div>
         </div>
 
