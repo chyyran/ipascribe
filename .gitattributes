@@ -1,1 +1,4 @@
-cmudict/**/* linguist-vendored
+cmudict/cmudict-0.7b linguist-vendored
+cmudict/cmudict.json linguist-vendored
+cmudict/cmudict.pickle linguist-vendored
+cmudict/cmudict.zip linguist-vendored
